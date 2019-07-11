@@ -1,0 +1,328 @@
+<br><br><br>        
+<section id="support" class="pageRow" ng-controller="changepasswordController">
+    <br><br>
+    <div class="wrapper">
+<div class="alert alert-success" style="width: 76%;margin-left: 140px;margin-bottom: 0px;padding:7px;display:none;">
+  <strong>Success!</strong>  
+</div>
+       <div class="supportBox row new_account_row">			
+           <div class="account-setting">		
+           <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                <div class="col-md-12 col-xs-12">
+                <div class="col-md-3 col-xs-12"><br>
+                <ul class="resp-tabs-list new_account_tab">
+                    <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>My Account</span></li>
+                    <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Edit profile</span></li>
+                    <% if(JSON.parse(JSON.stringify(school_detail.length >0)) && (JSON.parse(JSON.stringify(userdata[0].type == '1'))) || (JSON.parse(JSON.stringify(userdata[0].type == '5'))) ){ %>
+                    <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Edit School Info</span></li>
+                    <% } %>
+                    <li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span>Change password</span></li>
+                    <a href="http://classgenie.in/privecy" class="resp-tab-item" target="_blank">Privacy policy</a>
+                    <a href="http://classgenie.in/terms" class="resp-tab-item border_bot"  target="_blank"> Terms & Conditions</a>
+                    <div class="clearfix"></div>
+	        </ul>
+                </div>
+
+<!--   school info for display --->        
+						
+<div class="resp-tabs-container col-md-9 col-xs-12 clear-left">						
+    <div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0">
+        <div class="login-top new-setting-form"> 
+              <h4>User details</h4>
+              <div class="profile_img" style="top: 39px;">
+             <% if (JSON.parse(JSON.stringify(userdata[0].image))) { %>
+            <img class="" src=<%- config.image_url %>assets/profile_image/<%- JSON.parse(JSON.stringify(userdata[0].image)) %> alt="My_Logo" style="height: 72px;" "weight:70px">
+             <% } else{ %>
+            <img class="" src=<%- config.image_url %>"assets/profile_image/no_image.jpg" alt="My_Logo" style="height: 72px;" "weight:70px">
+            <% } %>
+            
+            </div>
+              <table class="table table-bordered table-striped" style="width:85%;"> 
+            <tbody>
+              <tr>
+                <th style="width:20%">Name:</th>
+                <td><%- JSON.parse(JSON.stringify(userdata[0].name)) %></td>                 
+              </tr>
+
+              <tr>
+                <th>Email:</th>
+                <td><%- JSON.parse(JSON.stringify(userdata[0].email)) %></td>               
+              </tr>
+
+              <tr>
+                <th>ID:</th>
+                <td><%- JSON.parse(JSON.stringify(userdata[0].member_no)) %></td>               
+              </tr>
+
+            <tr>
+                <th>Cell Number:</th>
+                <td><%- JSON.parse(JSON.stringify(userdata[0].phone)) %></td>               
+              </tr>
+            
+            <tr>
+                <th>Age:</th>
+                <td> <%- JSON.parse(JSON.stringify(userdata[0].age)) %></td>               
+              </tr>
+              </tbody>
+              </table>
+              <% if (JSON.parse(JSON.stringify(school_detail.length)) > 0) { %>
+              <h4>School Details</h4>
+             <table class="table table-bordered table-striped" style="width:85%;"> 
+             <tbody>
+              <tr>
+                <th style="width:28%">School:</th>
+                <td><%- JSON.parse(JSON.stringify(school_detail[0].school_name)) %></td>                 
+              </tr>
+
+              <tr>
+                <th>Web Url:</th>
+                <td><%- JSON.parse(JSON.stringify(school_detail[0].web_url)) %></td>               
+              </tr>
+
+              <tr>
+                <th>Address:</th>
+                <td><%- JSON.parse(JSON.stringify(school_detail[0].address)) %></td>               
+              </tr>
+
+            <tr>
+                <th>City:</th>
+                <td><%- JSON.parse(JSON.stringify(school_detail[0].city)) %></td>               
+              </tr>
+            
+            <tr>
+                <th>State:</th>
+                <td><%- JSON.parse(JSON.stringify(school_detail[0].state)) %></td>               
+              </tr>
+
+
+                <tr>
+                <th>Country:</th>
+                <td><%- JSON.parse(JSON.stringify(school_detail[0].country)) %></td>               
+              </tr>
+
+            <tr>
+                <th>Pin code:</th>
+                <td><%- JSON.parse(JSON.stringify(school_detail[0].pincode)) %></td>               
+              </tr>
+            
+            <tr>
+                <th>Phone:</th>
+                <td><%- JSON.parse(JSON.stringify(school_detail[0].phone)) %></td>               
+              </tr>
+
+           <% } %>
+            </tbody>
+            </table> 
+                </div><br><br>
+                
+ 
+    </div>	
+</div>
+
+<!--------- school profile here ------------->
+
+<div class="resp-tabs-container col-md-9 col-xs-12 clear-left">                        
+<h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>Edit profile</h2>                      
+<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+   <div class="login-top new-setting-form">
+        <h3>Edit profile</h3>
+        <form name="edit_profile" id="edit_profile" action="img_upload" method="post" enctype="multipart/form-data">
+ 
+             
+             <div class="form-group">
+                <label class="control-label col-sm-2" for="name" style="width: 12.666667%;">Name:</label>
+                <div class="col-sm-9" style="margin-bottom: 15px;">
+                  <input type="text" class="form-control" placeholder="Name" name="teacher_name" id="teacher_name" value="<%- JSON.parse(JSON.stringify(userdata[0].name)) %>" >
+           
+                     </div>
+                </div><br/>
+
+               <div class="form-group">
+                <label class="control-label col-sm-2" for="age" style="width: 12.666667%;">Age:</label>
+                <div class="col-sm-9" style="margin-bottom: 15px;">
+                  <input type="text" class="form-control"  name="age" id="age" value="<%- JSON.parse(JSON.stringify(userdata[0].age)) %>">
+           
+                  </div>
+                </div><br/>
+
+                
+            
+            <div class="profile_img">
+             <% if (JSON.parse(JSON.stringify(userdata[0].image))) { %>
+            <img class="" src=<%- config.image_url %>assets/profile_image/<%- JSON.parse(JSON.stringify(userdata[0].image)) %> alt="My_Logo" style="height: 72px;" "weight:70px">
+             <% } else{ %>
+            <img class="" src=<%- config.image_url %>"assets/profile_image/no_image.jpg" alt="My_Logo" style="height: 72px;" "weight:70px">
+            <% } %>
+            <input type="hidden" name="memberno" id="memberno" value="<%- JSON.parse(JSON.stringify(userdata[0].member_no)) %>" readonly>
+            </div>
+              <img ng-src="{{ thumbnail.dataUrl }}" style="width:100px;height:100px;margin-left:100px;" ng-show="img"/>
+                
+                <div class="form-group">
+                <label class="control-label col-sm-2" for="image" style="width: 12.666667%;">Image:</label>
+                <div class="col-sm-9" style="margin-bottom: 15px;">
+                  <input  id="upload" class="form-control" name="upload" type="file" onchange="angular.element(this).scope().photoChanged(this.files)" />          
+             </div>
+                </div> <br/>
+               <div class="login-bottom login-bottom1 submit-bootm">
+                <div class="new_submit">
+                  <div class="form-group">
+                <label class="control-label col-sm-4" for="Phone"></label>
+                <div class="" id="loader_container">
+                        <input type="button" class="btn btn-primary" value="Save changes" ng-click="change_profile()">
+                 </div>
+                </div> 
+                    </div>
+
+                <div class="clear"></div>
+            </div>		
+        </form>									
+    </div>
+</div> 						
+</div>	
+
+<% if(JSON.parse(JSON.stringify(school_detail.length >0)) && (JSON.parse(JSON.stringify(userdata[0].type == '1'))) || (JSON.parse(JSON.stringify(userdata[0].type == '5'))) ){ %>
+ <!-- edit school info here.............................---->                       
+<div class="resp-tabs-container col-md-9 col-xs-12 clear-left">						
+    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+        <div class="login-top new-setting-form"> 
+          <h3>Edit school details</h3>
+           <form name "edit_school" class="form-horizontal" ng-submit="changeSchoolInfo()" id= "schoolinfo"   method="post">
+                
+                <div class="form-group">
+                <label class="control-label col-sm-2" for="school">School:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="School name" name="school_name"  id="school_name" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].school_name)) :'' %>" required>
+                  
+                </div>
+                </div>
+
+
+                <div class="form-group">
+                <label class="control-label col-sm-2" for="Url">Web Url:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="web url" name="web_url" id="web_url" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].web_url)) : '' %>"> 
+                   <span id="web_url_text"></span>
+                </div>
+                </div>
+
+                 <div class="form-group">
+                <label class="control-label col-sm-2" for="Url">Address:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder=" School address" name="school_address" id="school_address" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].address)) : '' %>" >
+                </div>
+                </div> 
+
+                 <div class="form-group">
+                <label class="control-label col-sm-2" for="Url">City:</label>
+                <div class="col-sm-10">
+                   <input type="text" class="form-control" placeholder="School City" name="school_city" id="school_city" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].city)) : '' %>" >
+                 </div>
+                </div>  
+                <div class="form-group">
+                <label class="control-label col-sm-2" for="State">State:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="School State" name="school_state" id="school_state" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].state)) : '' %>" > 
+                        </div>
+                </div>  
+                 <div class="form-group">
+                <label class="control-label col-sm-2" for="Country">Country:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Pin Code" name="school_country" id="school_country" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].country)) : '' %>" > 
+                </div>
+                </div> 
+
+                <div class="form-group">
+                <label class="control-label col-sm-2" for="Pin">Pin Code:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Pin Code" name="pin_code" id="pin_code" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].pincode)) : '' %>" > 
+                </div>
+                </div> 
+ 
+                <div class="form-group">
+                <label class="control-label col-sm-2" for="Phone">Phone:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" placeholder="Phone" name="school_phone" id="school_phone" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].phone)) : '' %>" >
+                </div>
+                </div>  
+               <input type="hidden" class="hh" placeholder="school Id" name="school_id" id="school_id" value="<%= (JSON.parse(JSON.stringify(school_detail.length)) > 0) ? JSON.parse(JSON.stringify(school_detail[0].school_id)) : '' %>"> 
+                
+                
+
+               <div class="login-bottom login-bottom1 submit-bootm">
+                <div class="new_submit">
+                  <div class="form-group">
+                <label class="control-label col-sm-4" for="Phone"></label>
+                <div class="">
+                        <input type="submit" class="btn btn-primary" value="Save changes">
+                 </div>
+                </div> 
+                    </div>
+                <div class="clear"></div>
+               <br>
+                </div>
+            </form> 
+            								
+        </div>						
+    </div>                        
+</div>
+<% } %>
+
+ 
+
+<!-- change password here.............................---->                        
+<div class="resp-tabs-container col-md-9 col-xs-12 clear-left">
+      <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-3">
+             <h3>Change password</h3>
+            <form name="userForm" class="form-horizontal" ng-submit="change_password()" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.currpassword.$invalid && !userForm.currpassword.$pristine }">
+                 <label class="control-label col-sm-3">Current password</label>
+                <div class="col-sm-9"> 
+                <input type="password" ng-model="currpassword" class="form-control" name="currpassword" id="currpassword" placeholder="Current password" required> 
+                 <p ng-show="userForm.currpassword.$invalid && !userForm.currpassword.$pristine" class="help-block">Current password is required.</p>
+                </div>
+                </div>
+                
+                 <div class="form-group" ng-class="{ 'has-error' : userForm.newpassword.$invalid && !userForm.newpassword.$pristine }">
+                 <label class="control-label col-sm-3">New password</label>
+                  <div class="col-sm-9"> 
+                 <input type="password" ng-model="newpassword" class="form-control" name="newpassword" id="newpassword" placeholder="New password" required> 
+                 <p ng-show="userForm.newpassword.$invalid && !userForm.newpassword.$pristine" class="help-block">New password is required.</p>
+                </div>
+                 </div>
+
+                 <div class="form-group" ng-class="{ 'has-error' : userForm.cfmpassword.$invalid && !userForm.cfmpassword.$pristine }">
+                 <label class="control-label col-sm-3">Confirm password</label>
+                 <div class="col-sm-9"> 
+                <input type="password" ng-model="cfmpassword" class="form-control" name="cfmpassword" id="cfmpassword" placeholder="Confirm password" required> 
+                 <p ng-show="userForm.cfmpassword.$invalid && !userForm.cfmpassword.$pristine" class="help-block">Confirm password is required.</p>
+                </div> 
+                <input type="hidden" name="member_no" id="member_no" value="<%- JSON.parse(JSON.stringify(session[0].member_no)) %>">
+                 
+                 </div> 
+                    <div class="form-group">
+                      <label class="control-label col-sm-3"></label>
+                    <div class="col-sm-9"> 
+                    <input type="submit" value="Save password" ng-disabled="userForm.$invalid" class="btn btn-primary">
+                    
+                   
+                    </div> 
+                    <div class="clear"></div> 
+            </form>
+        </div>
+    </div>	
+
+</div>              
+</div>
+</div>
+			
+</div>	
+<div class="clear"></div>
+
+                </div>
+        </div>
+
+</section>
+
+        
+        
+		

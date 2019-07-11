@@ -1,0 +1,197 @@
+<br><br><br><br>
+<section id="support" class="pageRow" ng-controller="signupController">
+<br><br>
+<div class="wrapper">
+<div class="supportBox row">
+
+<div class="logo_new">
+<div class="logo-top">
+<h1> Classgenie Teacher Login/Signup </h1>
+<img src="img/teacher-login.png" class="center-block" alt="teacher-login">
+</div>
+</div>		
+<div class="login">
+<div class="sap_tabs">
+<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+<ul class="resp-tabs-list">
+<li class="resp-tab-item resp-tab-active" aria-controls="tab_item-0" role="tab"><span>Login</span></li>
+<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><label>/</label><span>Sign up</span></li>
+ 
+<div class="clearfix"></div>
+</ul>				  	 
+<div class="resp-tabs-container">
+<h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>Login</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
+<div class="login-top">
+<form name="signin" id="signin" ng-submit="submitSignin()" method="post">
+<input type="text" name="email_signin" id="email_signin" placeholder="Email" required>
+<input type="password" name="password_signin" id="password_signin" placeholder="Password" required>
+
+<p><a href="#" data-toggle="modal" data-target="#myModal12">Forgot Password</a></p>
+
+<div class="login-bottom login-bottom1">
+<div class="submit new_submit">
+<input type="submit" value="LOGIN">
+</div>
+<div class="clear"></div>
+</div>		
+</form>
+
+</div>
+</div> 
+
+
+
+
+<h2 class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>/Sign up</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+<div class="login-top">
+<form name="signup" id="signup" ng-submit="submitSignup()" method="post">
+<input type="text" name="name" id="name" placeholder="Your Name" required>
+<select class="form-control selectnew" id="role" name="role">
+<option value="">Role</option>
+<option value="2">Teacher</option>
+<option value="1">Principal</option>
+<option value="5">Vice Principal</option>
+</select>
+<input type="text" placeholder="School Name" name="school" id="school" ng-keyup="onchangeSchoolserch()" ng-blur="checkUser()"  required  class="autocomplete-1">
+<label id="school-error" class="error" for="school" style="display:none;"></label>
+<div id="txtAllowSearchID" class="txtAllowSearchID" style="display:none" data-toggle="modal" data-target="#myModal">
+<a href="#">Add New School</a></div>
+<input type="text" name="email_signup" id="email_signup" placeholder="Email" required>
+<input type="text" name="phone" id="phone" placeholder="Mobile" required>
+<input type="password" name="password_signup" id="password_signup" placeholder="Password" required>
+<div class="login-bottom">
+<div class="submit new_submit">
+<input type="submit" value="SIGN UP">
+</div>
+</div>
+<input type="hidden" id="txtAllowSearch" name="txtAllowSearch">
+</form>
+
+<!-- Modal  for school detilas start here -->
+
+
+<div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+<!-- Modal content-->
+<div class="modal-content" style="width:80%; padding-left:10%">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<h4 class="modal-title">School Details</h4>
+</div>
+<div class="modal-body">
+<form name="schoolinfo" id="schoolinfo" ng-submit="submitSchool()" method="post">
+<input type="text" name="school_name" id="school_name" placeholder="School Name" required>
+<input type="text" name="address" id="address" placeholder="School Address" required>
+<input type="text" name="city" id="city" placeholder="School City" required>
+<input type="text" name="state" id="state" placeholder="School State" required>
+<input type="text" autocomplete="off" ng-keyup="getAutoComplteData()" name="country" id="country" placeholder="Country" required>
+<div id="suggesstion-box"></div>
+<input type="text" name="pincode" id="pincode" placeholder="Pincode" required>
+<input type="text" name="phone" id="phone" placeholder="Mobile Number" required>
+<input type="text" name="email" id="email" placeholder="Email Address" required>
+<input type="text" name="web_url" id="web_url" placeholder="School Website">
+<div class="login-bottom">
+<div class="submit new_submit">
+<input type="submit" value="Save">
+</div>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</div>
+
+</div>
+</div> 
+
+
+
+<div class="resp-tabs-container col-md-9 col-xs-12 clear-left">						
+    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+        <div class="login-top new-setting-form"> 
+          <h3>Edit school details</h3>
+           <div class="form-group">
+<label class="control-label col-sm-3" for="pwd">Email:</label>
+<div class="col-sm-9"> 
+<input type="text" class="form-control" id="pwd" ng-model="email" placeholder="Please enter email" style="padding:0px 0px 0px 10px;border:1px solid #ccc;" ng-required = "true">
+</div>
+</div> 
+
+            								
+        </div>						
+    </div>                        
+</div>
+ 
+
+<!-- modal for school details end here  ---->
+
+
+
+
+
+</div>
+</div>							
+</div>	
+
+</div>
+</div>	
+</div>	
+<div class="clear"></div>
+
+</div>
+</div>
+
+
+<!---    modal for forgot password start here ------->
+
+<div id="myModal12" class="modal" role="dialog">
+<div class="modal-dialog">
+<!-- Modal content-->
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<h4 class="modal-title">Forgot Password</h4>
+<div class="alert alert-success" style="padding: 10px;display:none;">
+<strong></strong>  
+</div>	            
+
+
+</div>
+<div class="modal-body">
+<form class="form-horizontal" name="forgot_form">
+
+<div class="form-group">
+<label class="control-label col-sm-3" for="pwd">Email:</label>
+<div class="col-sm-9"> 
+<input type="email" class="form-control" id="pwd" ng-model="email" placeholder="Please enter email" style="padding:0px 0px 0px 10px;border:1px solid #ccc;" ng-required = "true">
+</div>
+</div> 
+
+
+
+<div class="form-group"> 
+<div class="col-sm-offset-3 col-sm-9">
+<button type="submit" class="btn btn-primary" ng-click="forgotPassword()" ng-disabled="forgot_form.$invalid">Submit</button>
+</div>
+</div>
+</form>
+
+
+
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+</div>
+</div>
+
+</div>
+</div> 
+
+
+<!---    modal for forgot password start here ------->
+
+</section>
+
+

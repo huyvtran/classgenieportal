@@ -1,0 +1,145 @@
+
+		<br><br><br>        
+		<section id="support" class="pageRow" ng-controller="teacherManageController">
+        <br><br>
+			<div class="wrapper">
+                        
+                 <div class="row new_account_row">
+                <div class="alert alert-success" style="padding: 10px;width: 900px;margin-left: 157px;display:none;">
+                  <strong>Success!</strong>  
+                </div>	
+				<div class="supportBox row new_account_row">
+			
+		  <div class="account-setting">
+			<div id="horizontalTab" style="display: block; width: 95%; margin: 10px;">
+              <div class="col-md-12 col-xs-12 ">
+              <div class="col-md-12 col-xs-12">
+              <h3>Teacher List</h3>
+              <table class="table table-bordered overflow-new"><thead>
+              <tr>
+                <th>Teacher Name</th><th>Email</th><th>Member Number</th><th>Status</th><th>Role</th><th>Remove</th><th>save</th>
+              </tr>
+              </thead>
+                 <tbody>
+                  <% for(var i=0; i<data.length; i++) {%>
+	                <tr class="abcd"><td><%= data[i].name %></td>
+	                	<td><%= data[i].email %></td>
+	                    <td><%= data[i].member_no %></td>
+	                    <td><% if(data[i].status ==1) {%>
+	                    <button type="button" ng-click="change_status(<%= data[i].member_no %>,2)" class="btn btn-primary" data-toggle="modal">Activate</button><% } else { %>
+	                    <button type="button" ng-click="change_status(<%= data[i].member_no %>)" class="btn btn-primary" data-
+	                    toggle="model">Deactivate</button><% } %>
+	                    </td>
+	                    <td><% if(data[i].type ==2) {%>Teacher<% } else if(data[i].type ==1) { %>Principal<% } else if(data[i].type ==5) { %>Vice Principal<% } %>
+                        </td>
+                        <td>
+                        	 <button type="button" id="<%= data[i].member_no %>" ng-click="teacher_delete(<%= data[i].member_no %>)" class="btn btn-danger" data-toggle="modal" > <span class="glyphicon glyphicon-trash"></span></button>
+
+                        </td>
+                           
+                           <td>
+                        	 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" ng-click="getDataById(<%= data[i].id %>)"> <span class="glyphicon glyphicon-pencil"></span></button>
+                           </td>
+	                 
+	                 </tr>
+	              <% } %>  
+	 	         </tbody>
+               </table>
+                   
+                <div id="myModal" class="modal fade" role="dialog">
+			     <div class="modal-dialog">
+
+			    <!-- Modal content-->
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Teacher Management</h4>
+                                <div id="profileMessage" style="width: 100%;margin-bottom: 0px;padding:7px;color: #3c763d;background-color: #dff0d8;border-color: #d6e9c6;display:none;">
+                                <strong>Success! {{message}}</strong>  
+                                </div>
+                                
+                                  <div id="profileMessage1" ng-if(exist=='exist') style="width: 100%;margin-bottom: 0px;padding:7px;color: #ff0000;background-color: #dff0d8;border-color: #d6e9c6;display:none;">
+                                <strong>{{message}}</strong>  
+                                </div>
+			        
+			      </div>
+			      <div class="modal-body">
+			       <form class="form-horizontal" name="form_data">
+				  <div class="form-group">
+				    <label class="control-label col-sm-3" for="email">Teacher name:</label>
+				    <div class="col-sm-9">
+				      <input type="text" class="form-control" id="teacher_name" ng-model="teacher_name" placeholder="Teacher name" readonly>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3" for="pwd">Email:</label>
+				    <div class="col-sm-9"> 
+				      <input type="text" class="form-control" id="pwd" ng-model="email" placeholder="Enter email" readonly>
+				    </div>
+				  </div>
+
+				   <div class="form-group">
+				    <label class="control-label col-sm-3" for="pwd">Member number:</label>
+				    <div class="col-sm-9"> 
+				      <input type="text" class="form-control" id="member_number" ng-model="member_number" placeholder="Enter member number" readonly>
+				    </div>
+				  </div>
+
+
+				  <div class="form-group">
+				    <label class="control-label col-sm-3" for="pwd">Status:</label>
+				    <div class="col-sm-9"> 
+				      <input type="text" class="form-control" ng-model="status" id="status" placeholder="Enter status" readonly>
+				      <input type="hidden" class="form-control" ng-model="hiddenValue">
+				    </div>
+				  </div>
+
+				    <div class="form-group">
+				    <label class="control-label col-sm-3"  for="pwd">Role:</label>
+				    <div class="col-sm-8"> 
+				    <select name = "type" class="form-control" ng-model="type" required="true">
+				    <option value="">Role</option>
+                                    <option value="2">Teacher</option>
+                                    <option value="1">Principal</option>
+                                    <option value="5">Vice Principal</option>
+				    </select>
+				      
+				    </div>
+				  </div>
+
+				  
+				  <div class="form-group"> 
+				    <div class="col-sm-offset-3 col-sm-9">
+		<button type="submit" class="btn btn-primary" ng-click="saveDetails()" ng-disabled="form_data.$invalid">Save</button>
+				    </div>
+				  </div>
+				</form>
+
+
+
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+
+  			</div>
+			</div>
+
+               
+               </div>	
+               </div> 
+              </div> 
+	        </div>
+		   </div>	
+		<div class="clear"></div>
+	
+				</div>
+			</div>
+			
+		</section>
+        
+        
+        
+		
+       

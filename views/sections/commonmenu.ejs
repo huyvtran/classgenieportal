@@ -1,0 +1,9 @@
+<div class="wrapper">
+   <div class="tab-nav account_setting new_acoount">
+		<a href="accountsetting" class="active"><i class="fa fa-cog"></i>Account settings</a>
+		<a href="classmanagement"><i class="fa fa-wrench"></i>Class management</a>
+		<%if ((session[0].school_id > 0 ) && (session[0].type == '1' || session[0].type == '5')) { %>
+		<a href="teachermanagement"><i class="fa fa-wrench"></i>Teacher management</a>
+		<%  } %>
+   </div>
+</div> 

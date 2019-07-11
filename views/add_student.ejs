@@ -1,0 +1,56 @@
+<style>
+.remove{
+    background: #C76868;
+    margin-top: -31px;
+    margin-left:5px;
+    margin-left: 612px;
+    color: #FFF;
+    float: right;
+    font-weight: bold;
+    font-size: 21px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 6px;
+    vertical-align: top;
+    line-height: 100%;   
+}
+.add{
+    background: #0094bb;    
+    color: #FFF;
+    font-weight: bold;
+    font-size: 17px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+     
+    
+}
+</style>
+<div id="student_hide" style="display:block">
+    <div class="login-top new-setting-form">
+        <form name="add_student" id="add_student" action="" method="post">
+	    <div class="input_fields_wrap">
+                <div class="row">              
+                <div class="col-md-3">
+	         <button class="add" ng-click="addNewChoice()">+</button></div>               
+                </div>
+			<div id='TextBoxesGroup'>
+			<div id="TextBoxDiv1" data-ng-repeat="choice in choices">
+			<label>Student {{$index+1}} : </label>
+			<input type="text" class="form-control add_student" ng-model="choice.name" required="true">
+                        <button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>
+			</div>
+			</div>
+                        <input type="hidden" name="classId" id='classId' value="<%= classId %>">
+                         <input type="hidden" name="classname" id='classname' value="<%= classname %>">
+                            <div class="login-bottom login-bottom1 submit-bootm">
+				<div class="submit new_submit">
+                                <input type="button" class="btn btn-primary" value="Save" ng-click="addMultipleStudent()" ng-disabled="add_student.$invalid">
+			    </div>				
+			<div class="clear"></div>
+	    </div>		
+	</form> 							
+    </div>
+</div>
+                        

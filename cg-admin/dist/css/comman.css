@@ -1,0 +1,86 @@
+.submmit_btn {
+    margin-right: 54px !important;
+}
+
+.form-group .control-label:after {
+  content:" *";
+  color:red;
+  }
+  
+  .control-label-new{
+  padding-top: 10px;
+  text-align: right;  
+}
+.panel-heading {
+    font-size: 17px;
+    font-weight: bold;
+}
+  #changePassword label.error {
+        float:left;
+        width: auto;
+        display: inline;
+        
+       }  
+
+ #staffmang_create label.error {
+        width: auto;
+        display: inline;
+        
+       }
+       
+ #user_create label.error {
+        width: auto;
+        display: inline;
+        
+       } 
+
+ #user_edit label.error {
+        width: auto;
+        display: inline;
+       
+       } 
+
+ #Language_form label.error {
+        width: auto;
+        display: inline;
+        
+       } 
+
+#change_password label.error {
+        width: auto;
+        display: inline;
+       
+       } 
+  #classimg_create label.error {
+        width: auto;
+        display: inline;
+        
+       } 
+  form.cmxform label.error, label.error {
+    color: red;
+    font-style: italic;
+}
+
+.search_btn-add {
+    background: #3c8dbc;
+    border-color: #3c8dbc;
+}
+.search_btn-add:hover {
+    background: #3c8dbc;
+    border-color: #3c8dbc;
+}
+.btn-primary i {
+    padding-right: 5px;
+}
+.submit-new {
+    margin-top: 2%;
+    width: 25%;
+}
+span.logo-lg img {
+    margin-right: 6px;
+}
+
+.margin_top {
+    margin-top: 7px;
+    font-size: 15px;
+}

@@ -1,0 +1,72 @@
+ #changePassword label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+        font-weight: 100;
+       } 
+
+       ul#Image {
+    width: 220px;
+}
+li.treeview.parent a span {
+    width: 220px !important;
+} 
+
+ #staffmang_create label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+        font-weight: 100;
+       }
+       
+ #user_create label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+        font-weight: 100;
+       } 
+
+ #user_edit label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+        font-weight: 100;
+       } 
+
+ #Language_form label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+        font-weight: 100;
+       } 
+
+#change_password label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+        font-weight: 100;
+       } 
+  #classimg_create label.error {
+        margin-left: 10px;
+        width: auto;
+        display: inline;
+        font-weight: 100;
+       } 
+.form-group .control-label:after {
+  content:" *";
+  color:red;
+  }   
+.control-label-new{
+  padding-top: 7px  
+}
+a.navbar-brand.logo_left span {
+    color: #fff !important;
+    position: relative;
+    top: -3px;
+}
+a.navbar-brand.logo_left span img {
+    padding-right: 10px;
+}
+.dash_header {background: #55B5FF;}
+
+

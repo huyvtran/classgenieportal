@@ -1,0 +1,16 @@
+<div id="content-wrapper">
+      <div class="container">
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <div class="simple-text">
+                       <% for(var i=0; i<blogcontent.length; i++) {%>
+                           <h3><%= i+1 %>. <%= blogcontent[i].title %></h3>
+                           <p style="text-align:justify"><%= blogcontent[i].description %></p>
+                           <div class="empty-space marg-lg-b30"></div>
+                        <% } %>
+                       </div>
+                    </div>
+                </div>
+                </div>
+          </div>                
+ 

@@ -1,0 +1,21 @@
+<div id="upload_csv_hide" style="display:block">
+<h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0">
+<span class="resp-arrow"></span>Upload CSV</h2>
+
+    <div class="login-top new-setting-form">
+        <h4>Upload Student List</h4>
+        <form name="signin" id="signin" action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="importcsvfile" accept=".csv"  file-reader="fileContent" class="form-control" id='importcsvfile'>
+            <input type="hidden" name="classId" id='classId' value="<%= classId %>"> 
+             <input type="hidden" name="classname" id='classname' value="<%= classname %>">
+            <div class="login-bottom login-bottom1 submit-bootm">
+                <div class="new_submit">
+                        <input type="button" class="btn btn-primary" ng-click="uploadCsv()"  value="Upload">
+                </div>
+                <div class="clear"></div>
+            </div>		
+        </form>
+    </div>
+</div>
+                        
+						

@@ -1,0 +1,38 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+/* CUSTOM CSS (ADD YOUR CSS HERE!) */
+/*//////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+#signup label.error {
+margin-left: 3px;
+width: auto;
+font-weight: 100;
+color:red;
+} 
+
+#edit_profile label.error {
+margin-left: 3px;
+width: auto;
+font-weight: 100;
+color:red;
+} 
+
+#schoolinfo_signup label.error {
+margin-left: 3px;
+width: auto;
+font-weight: 100;
+color:red;
+}        
+#signin label.error {
+margin-left: 3px;
+width: auto;
+font-weight: 100;
+color:red;
+}       
+#change_password, #school_search, #schoolinfo, #classmanagement  label.error {
+margin-left: 3px;
+width: auto;
+font-weight: 100;
+color:red;
+} 
+ 

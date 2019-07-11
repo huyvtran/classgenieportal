@@ -1,0 +1,122 @@
+<%if (render_page ==  'index') {  %>
+  <header class="header pageRow paralax skew skew-bottom" style="background-image: url('media/paralax/1.jpg');">
+            <div class="overlay"></div>
+            <div class="wrapper">
+                <div class="header-outer">
+                    <div class="header-inner">
+                        <div class="header-top row">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a href="<%= menu.HOME %>" class="logo"></a></div>
+                            <div class="col-lg-9 col-md-7 col-sm-6 col-xs-6">
+                                <i class="fa fa-bars mobileMenuNav whiteTxtColor"></i>
+                                <nav class="nav-container customBgColor">
+                                    <i class="fa fa-times mobileMenuNav small-device"></i>
+                                    <ul class="menu">
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.HOME %>">Home</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.ABOUT %>">ABOUT</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.FEATURES %>">FEATURES</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.BLOG %>" target="_blank">BLOG</a></li>
+                                        <li class="dropdown"><a class="roboto whiteTxtColor" id="dLabel" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                         Support<span class="caret"></span></a>
+                                         <ul class="dropdown-menu drop_box" aria-labelledby="dLabel">
+                                           <li><a href="http://faq.classgenie.in/" target="_blank">Faq's</a></li>
+                                           <li><a href="http://classgenie.in/contact">Contact</a> </li>
+                                           
+                                           </ul>    
+                                           </li>
+                                        <li class="teacher_login"><a class="roboto" href="login">Teacher Login</a></li>
+                                   
+                                         
+									</ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom row">
+                    <div class="col-lg-12">
+                        <div class="header-left">
+                            <h1 class="header-title ralewaySemiBold whiteTxtColor">Growing Creative Classroom Community</h1>
+                            <span class="header-subtitle_bold robotoMedium whiteTxtColor">An inspiring way to set up a resourceful classroom.</span>
+                                                       
+                        </div>
+                        <div class="header-right">
+                            <img class="wow fadeInRight" data-wow-delay="0.2s" src="media/home/home_banner.png" alt="Phones">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skew_appended whiteSection"></div>
+        </header>
+   <% }else if(render_page ==  'message' || render_page ==  'forgot_password' ){ %>  
+  <header class="header pageRow overflow-visible fixed-header">
+            <div class="wrapper">
+                <div class="header-outer">
+                    <div class="header-inner">
+                        <div class="header-top row">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a href="<%= menu.HOME %>" class="logo"></a></div>
+                            <div class="col-lg-9 col-md-7 col-sm-6 col-xs-6">
+                                <i class="fa fa-bars mobileMenuNav whiteTxtColor"></i>
+                                <nav class="nav-container customBgColor">
+                                    <i class="fa fa-times mobileMenuNav small-device"></i>
+                                    <ul class="menu">
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.HOME %>">Home</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.ABOUT %>">ABOUT</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.FEATURES %>">FEATURES</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.BLOG %>" target="_blank">BLOG</a></li>
+                                        <li class="dropdown"><a class="roboto whiteTxtColor" id="dLabel" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                         Support<span class="caret"></span></a>
+                                         <ul class="dropdown-menu drop_box" aria-labelledby="dLabel">
+                                           <li><a href="http://faq.classgenie.in/" target="_blank">Faq's</a></li>
+                                           <li><a href="http://classgenie.in/contact">Contact</a> </li>
+                                           
+                                           </ul>
+                                           </li>
+                                         
+                                         <li class="teacher_login"><a class="roboto" href="login">Teacher Login</a></li>
+                                         
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<% }else { %>
+    <header class="header pageRow overflow-visible fixed-header">
+            <div class="wrapper">
+                <div class="header-outer">
+                    <div class="header-inner">
+                        <div class="header-top row">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a href="<%= menu.HOME %>" class="logo"></a></div>
+                            <div class="col-lg-9 col-md-7 col-sm-6 col-xs-6">
+                                <i class="fa fa-bars mobileMenuNav whiteTxtColor"></i>
+                                <nav class="nav-container customBgColor">
+                                    <i class="fa fa-times mobileMenuNav small-device"></i>
+                                    <ul class="menu">
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.HOME %>">Home</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.ABOUT %>">ABOUT</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.FEATURES %>">FEATURES</a></li>
+                                        <li><a class="roboto whiteTxtColor" href="<%= menu.BLOG %>" target="_blank">BLOG</a></li>
+                                        <li class="dropdown"><a class="roboto whiteTxtColor" id="dLabel" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                         Support<span class="caret"></span></a>
+                                         <ul class="dropdown-menu drop_box" aria-labelledby="dLabel">
+                                           <li><a href="http://faq.classgenie.in/" target="_blank">Faq's</a></li>
+                                           <li><a href="http://classgenie.in/contact">Contact</a> </li>
+                                           
+                                           </ul>
+                                           </li>
+                                         <% if(session) { %>
+                                         <li class="teacher_login"><a class="roboto" href="logout">Teacher Logout</a></li>
+                                         <% }else{ %>
+                                         <li class="teacher_login"><a class="roboto" href="login">Teacher Login</a></li>
+                                         <% } %>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<% } %>  

@@ -1,0 +1,105 @@
+<br><br><br>        
+<section id="support" class="pageRow" ng-controller="classmanagement">
+    <br><br>
+      <div class="wrapper">
+      <div class="row new_account_row">
+      <div class="alert alert-success" style="padding: 10px;width: 900px;margin-left: 157px; display:none;">
+      <strong>Success!</strong>  
+    </div>	
+    <div class="supportBox row new_account_row">
+          <div class="account-setting">
+            <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+              <div class="col-md-12 col-xs-12">
+              <div class="col-md-3 col-xs-12"><br>
+                <ul class="new_account_tab">
+                  <li class="resp-tab-item resp-tab-active"><span><a href="/classmanagement" style="border:none;padding:0;">Add class</a></span></li>
+                  <li class="resp-tab-item resp-tab-active" style="border:1px solid #ccc;" ng-click = "classlist(<%- JSON.parse(JSON.stringify(session[0].member_no)) %>)"><span>Class list</span></li>
+                  <div class="clearfix"></div>
+                </ul>
+              </div>
+
+              <div class="col-md-9 col-xs-12 clear-left">
+                <div id="allList">
+                  <div class="login-top">
+                     <form name="classmanagement" id="classmanagement" ng-submit="classmanage()" method="post">
+                      <h3>Add Class</h3>
+                        <div class="form-group">
+                          <label for="className">Class name:</label>
+                            <input type="text"  placeholder="Class Name" class="form-control" name="className" ng-model="className" id="className" ng-required="true"> 
+                        </div>
+
+              <div class="form-group">
+                <label for="grade">Grade:</label>
+                    <select class="form-control selectnew_grade"  name="grade" id="grade" ng-model="grade" class="form-control" required="true">
+                      <option value="">Choose a Grade</option>
+                      <option value="1stclass">1st Class</option>
+                      <option value="2ndclass">2nd Class</option>
+                      <option value="3rdclass">3rd Class</option>
+                      <option value="4thclass">4th Class</option >
+                      <option value="5thclass">5th Class</option>
+                      <option value="6thclass">6th Class</option>
+                      <option value="7thclass">7th Class</option>
+                      <option value="8thclass">8th Class</option>
+                    </select>
+              </div>
+                   <input type="hidden" class="email"  name="member_no" id="member_no" value="<%- JSON.parse(JSON.stringify(session[0].member_no)) %>">
+
+              <div class="login-bottom login-bottom1 submit-bootm">
+                <div>
+                  <input type="submit" class="btn btn-primary" value="Save" ng-disabled="classmanagement.$invalid">
+                </div> 			
+                <div class="clear"></div>
+              </div>		
+          </form>
+          </div>
+          </div>
+
+            <!--    student list start here    -->
+
+            <div id="hideandshow" ng-if="showStatus == 'show'" style="display:none;">
+            <h3>Student Lists</h3><div style="float:right;width:40%;">
+
+             <input type="text" ng-model="search" class="form-control" placeholder="Type your search keyword.." style="float:right;width:80%;"></div>
+          
+            <table class="table table-striped table-responsive table-hover">
+            <thead>
+            <tr><th>Student Name</th><th>Class Name</th><th>Student number</th><th>Parent number</th></tr>
+            </thead>
+            <tbody>
+            <tr ng-show="totalLength > 0" dir-paginate="item in students |orderBy:sortBy:reverse|filter:{'stu_name': search} |itemsPerPage:10">
+            <td>{{item.stu_name}}</td>
+            <td>{{class_name_students}}</td>
+            <td>{{item.student_no}}</td>
+            <td>{{item.parent_no}}</td>
+            </tr>
+             </tbody>
+             </table>             
+               <center ng-show="totalLength > 0"><dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" >
+                </dir-pagination-controls></center>
+                </div>
+
+                <!--    student list end here    -->
+
+               </div> 
+              </div>
+            </div>	
+          </div> 
+         </div> 
+        </div>
+      </div>	
+     <div class="clear"></div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
